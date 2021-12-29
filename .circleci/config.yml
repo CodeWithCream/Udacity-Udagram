@@ -31,7 +31,7 @@ jobs:
       - run: 
           name: dir check
           command: |
-            ls
+            cd udagram
       - run:
           name: frontend install
           command: |
