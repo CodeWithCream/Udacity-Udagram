@@ -34,8 +34,8 @@ jobs:
             cd udagram 
       - run: 
           name: dir check
-            command: |
-              ls 
+          command: |
+            ls 
       - run:
           name: frontend install
           command: |
