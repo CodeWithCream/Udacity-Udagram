@@ -29,9 +29,13 @@ jobs:
       - node/install
       - checkout
       - run: 
-          name: dir check
+          name: dir chenge
           command: |
-            cd udagram
+            cd udagram 
+      - run: 
+          name: dir check
+            command: |
+              ls 
       - run:
           name: frontend install
           command: |
