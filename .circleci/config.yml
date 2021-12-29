@@ -21,13 +21,14 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
-  build:
+  build_and_deploy:
     docker:
       # the base image can run most needed actions with orbs 
       - image: "cimg/base:stable"
     steps:
       - node/install
       - checkout
+      - aws-cli/setup   
       - run:
           name: frontend install
           command: |
@@ -35,34 +36,28 @@ jobs:
       - run:
           name: backend install
           command: |
-            npm run backend:install
+            cd udagram && npm run backend:install
       - run:
           name: frontend build
           command: |
-            npm run frontend:build
+            cd udagram && npm run frontend:build
       - run:
           name: backend build
           command: |
-            npm run backend:build
-  deploy: 
-    docker:
-      # the base image can run most needed actions with orbs 
-      - image: "cimg/base:stable"
-    steps:
-      - aws-cli/setup      
+            cd udagram && npm run backend:build
       - run:
           name: deploy backend
           command: |
-            npm run backend:deploy
+            cd udagram && npm run backend:deploy
       - run:
           name: deploy frontend
           command: |
-            npm run frontend:deploy
+            cd udagram && npm run frontend:deploy  
+      
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
   deploy-app-workflow:
     jobs:
-      - build
-      - deploy
+      - build_and_deploy
