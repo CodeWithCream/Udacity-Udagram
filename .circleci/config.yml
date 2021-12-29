@@ -27,12 +27,11 @@ jobs:
       - image: "cimg/base:stable"
     steps:
       - node/install
-      - checkout:
-          path: ~/udagram
+      - checkout
       - run:
           name: frontend install
           command: |
-            npm run frontend:install
+            cd udagram && npm run frontend:install
       - run:
           name: backend install
           command: |
