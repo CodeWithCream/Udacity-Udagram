@@ -31,7 +31,7 @@ jobs:
       - run: 
           name: dir check
           command: |
-            dir
+            ls
       - run:
           name: frontend install
           command: |
