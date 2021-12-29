@@ -22,13 +22,14 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
   build:
-    working_directory: ~/udagram
     docker:
       # the base image can run most needed actions with orbs 
       - image: "cimg/base:stable"
     steps:
       - node/install
       - checkout
+      - ls
+      - cd udagram
       - run:
           name: frontend install
           command: |
