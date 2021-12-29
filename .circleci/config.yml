@@ -25,11 +25,10 @@ jobs:
     docker:
       # the base image can run most needed actions with orbs 
       - image: "cimg/base:stable"
-    working_directory: ~/udagram
     steps:
       - node/install
       - checkout:
-          path: ~
+          path: ~/udagram
       - run:
           name: frontend install
           command: |
