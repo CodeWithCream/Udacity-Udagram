@@ -28,7 +28,7 @@ jobs:
     steps:
       - node/install
       - checkout
-      - cd udagram
+      - dir
       - run:
           name: frontend install
           command: |
