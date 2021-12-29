@@ -28,7 +28,10 @@ jobs:
     steps:
       - node/install
       - checkout
-      - dir
+      - run: 
+          name: dir check
+          command: |
+            dir
       - run:
           name: frontend install
           command: |
