@@ -6,7 +6,14 @@ This project is created for the Udacity Full Stack Javascript Developer Nanodegr
 The project consists of a full stack application for posting some images. Server is a Node.js project and frontend is an Angular application.
 The project purpose is to learn how to deploy a full stack app to cloud services. 
 
-## Requirements
+## Usage of the existing app
+
+The application is available on http://udagram-app-bucket.s3-website-us-east-1.amazonaws.com/
+
+## Build status
+[![CircleCI](https://circleci.com/gh/CodeWithCream/Udacity-Udagram/tree/main.svg?style=svg)](https://circleci.com/gh/CodeWithCream/Udacity-Udagram/tree/main)
+
+## Requirements for local execution
 
 ### AWS account
 To start the app, you have to create (or use existing) an AWS account and use its parameters in the backend app. 
